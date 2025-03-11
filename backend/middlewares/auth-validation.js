@@ -10,7 +10,7 @@ const signupValidation = (req, res, next) =>{
         .max(16)
         .required()
         .pattern(new RegExp(/^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]+$/))
-        .message('Password must contain at least one uppercase letter, one number, and one special character (@$!%*?&), and be 8-16 characters long')
+        .message('Password must contain at least one uppercase letter, one number, and one special character (@$!%*?&), and be 8-16 characters long') // Adding password validation
     })
     const {error} = schema.validate (req.body); // to validate the request body object 
     if (error){
