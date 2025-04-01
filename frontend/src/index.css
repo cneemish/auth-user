@@ -17,12 +17,17 @@ body{
 }
 
 .container{
-  background-color:bisque;
+  background-color:rgb(208, 195, 238);
   padding: 32px 48px;
   border-radius: 10px;
   width: 100%;
   max-width: 400px;
   box-shadow: 10px 10px 10px 0px rgba(80, 28, 28, 0.1);
+  display: flex;           /* Enable flexbox layout */
+  flex-direction: column;  /* Stack children vertically (h1 above form) */
+  justify-content: center; /* Center vertically */
+  align-items: center;     /* Center horizontally */
+
 }
 
 .container > h1{
@@ -47,6 +52,12 @@ body{
   border-bottom: 1px solid #333;
 
 }
+.container > form > div:last-of-type { /* Target last div in form */
+  margin-top: 10px;
+  text-align: center; /* Center the text */
+  width: 100%;
+  align-items: center; /* Re-center this specific div */
+}
 
 .container input::placeholder{
   font-size: 12px;
@@ -54,13 +65,19 @@ body{
 
 }
 
-button{
+.container button {
   background-color: azure;
-  border: oklab(lightness a b);
-  font-size: 20px;
-  color:cadetblue;
+  border: none; /* Corrected invalid border property */
+  font-size: 18px; /* Adjusted size */
+  color: #5f9ea0; /* Hex for cadetblue */
   border-radius: 4px;
-  padding: 10px;
+  padding: 10px 20px; /* Added horizontal padding */
   cursor: pointer;
-  margin: 10px 0;
+  margin-top: 10px; /* Use margin-top instead of margin */
+  width: 100%; /* Make button full width */
+  transition: background-color 0.2s ease;
 }
+
+ .container button:hover {
+     background-color: #e0ffff; /* Lighter cyan/azure */
+ }
