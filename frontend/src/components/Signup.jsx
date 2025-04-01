@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { Form, Link } from "react-router-dom";
+import { Form, Link, useNavigate } from "react-router-dom";
 import {ToastContainer} from 'react-toastify';
-import { handleError } from "../utils";
+import { handleError, handleSuccess } from "../utils";
 //import Form from 'react-bootstrap/Form';
 
 // Signup function to get signup details and handle the signup event 
@@ -22,8 +22,11 @@ function Signup(){
         setsignUpInfo(copySignUpInfo);
     };
     console.log('signUpInfo ->',signUpInfo);
+    
+    const navigate = useNavigate(); // to navigate to the login page after successful signup 
 
     //Handle the signup event
+    
      const handleSignup = async (e)=>{
         e.preventDefault(); //preventing the default behaviour refreshing after submission
         const {firstName, lastName, email, password} = signUpInfo;
@@ -40,6 +43,19 @@ function Signup(){
                 body: JSON.stringify(signUpInfo)
             })
             const result = await response.json();
+            const { success, message, error } = result;
+            if (success){
+                handleSuccess(message);
+               setTimeout (() =>{ 
+                navigate('/login');
+               }, 1000)
+            } else if (error){
+                const details = error?.details[0].message; // getting error returned from the api call 
+                handleError(details);
+            } else if (!success){
+                handleError(message);
+            }
+
             console.log(result);
 
         } catch (error) {
