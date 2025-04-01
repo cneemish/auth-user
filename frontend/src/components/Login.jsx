@@ -38,9 +38,11 @@ function Login(){
                 body: JSON.stringify(loginInfo)
             })
             const result = await response.json();
-            const { success, message, error } = result;
+            const { success, message, error, jwtToken, name } = result;
             if (success){
-                            handleSuccess(message);
+                        handleSuccess(message);
+                        localStorage.setItem('jwtToken', jwtToken); // saving the token to local storage
+                        localStorage.setItem('loggedInUser', name); // saving the name to local storage
                            setTimeout (() =>{ 
                             navigate('/home');
                            }, 1000)
@@ -54,8 +56,7 @@ function Login(){
         } catch (error) {
                         handleError(error.message);
             
-        }
-
+        } 
     }
     return(
     <div className="container"> 
