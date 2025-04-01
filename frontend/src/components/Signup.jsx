@@ -14,13 +14,13 @@ function Signup(){
     }) 
 
     // to check the details that would be shared with backend and creating an event 
-    const addDetails = (e) =>{
-        const {name, value} = e.target;
-        console.log(name, value); 
-        const  copysignUpInfo= {...signUpInfo};
-        copysignUpInfo[name] = value;
-        setsignUpInfo(copysignUpInfo);
-    }
+    const addDetails = (e) => {
+        const { name, value } = e.target;
+        console.log(name, value);
+        const copySignUpInfo = { ...signUpInfo };
+        copySignUpInfo[name] = value;
+        setsignUpInfo(copySignUpInfo);
+    };
     console.log('signUpInfo ->',signUpInfo);
 
     //Handle the signup event
@@ -53,12 +53,22 @@ function Signup(){
             <div>
             {<form onSubmit={handleSignup}>
                 <div>
-                    <label htmlFor="name">First Name</label>
-                    <input onChange={addDetails} type="text" name="name" autoFocus placeholder="Please Enter Your First Name"/>
+                    <label htmlFor="firstName">First Name</label>
+                    <input 
+                    onChange={addDetails} 
+                    type="text" name="firstName" 
+                    autoFocus placeholder="Please Enter Your First Name"
+                    value={signUpInfo.firstName}
+                    />
                 </div>
                 <div>
-                    <label htmlFor="name">Last Name</label>
-                    <input onChange={addDetails} type="text" name="name" autoFocus placeholder="Please Enter Your Last Name"/>
+                    <label htmlFor="lastName">Last Name</label>
+                    <input onChange={addDetails} 
+                    type="text" 
+                    name="lastName" 
+                    autoFocus placeholder="Please Enter Your Last Name"
+                    value={signUpInfo.lastName}
+                    />
                 </div>
                 <div>
                     <label htmlFor="email">Email</label>
@@ -78,7 +88,7 @@ function Signup(){
                         value={signUpInfo.password}
                     />
                 </div>
-                <button>Signup</button>
+                <button type="submit"> Signup</button>
                 <div>
                 <span>Already have an account? <Link to="/login">Login</Link></span>
                 </div>  
