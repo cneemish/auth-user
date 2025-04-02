@@ -140,3 +140,54 @@ body{
   text-decoration: none;
   color: black;
 }
+
+.home-page-container {
+  display: flex;
+  flex-direction: column; /* Stack Header, Main, Footer vertically */
+  min-height: 100vh; /* Ensure container takes at least full viewport height */
+  background-color: #f4f7f6; /* Optional: Light background for the page */
+}
+
+.main-content {
+  flex-grow: 1; /* Allows this section to grow and push the footer down */
+  display: flex; /* Use flexbox to center its children */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  padding: 20px; /* Add some padding around the content */
+}
+
+.editor-container {
+  background-color: #ffffff; /* White background for the editor card */
+  padding: 30px 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center; /* Center the H1 */
+  width: 80%; /* Control the width of the editor container */
+  max-width: 800px; /* Set a max width */
+}
+
+.editor-container h1 {
+  margin-bottom: 25px;
+  color: #333;
+}
+
+.slate-editor-wrapper {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  min-height: 150px; /* Give the editor some initial height */
+  text-align: left; /* Align text inside editor to the left */
+}
+
+.slate-editable {
+    padding: 10px 15px; /* Padding inside the editable area */
+    outline: none; /* Remove default focus outline if desired */
+}
+
+/* Add placeholder styles if using Slate's placeholder feature */
+.slate-editable [data-slate-placeholder="true"] {
+  color: #aaa;
+  opacity: inherit; /* Ensure placeholder is visible */
+  /* Add other placeholder styles as needed */
+}
+
+/* Ensure Footer is pushed down */

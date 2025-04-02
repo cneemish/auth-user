@@ -1,0 +1,56 @@
+.app-header{
+    background-color:color-mix(in srgb, color percentage, color percentage);
+    padding: 15px 30px;
+    color: white;
+    box-shadow: 0 2px 4px rgba(red, green, blue, alpha);
+}
+
+.header-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header-welcome{
+    display: flex;
+    align-items: center;
+}
+
+.header-nav{
+    display: flex;
+    align-items: center;
+}
+
+.header-link{
+    color: lightslategray;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    transition: color 0.2s ease-in-out;
+}
+
+.header-link:hover{
+    color: #f0e5e5;
+}
+
+.home-link{
+    font-size: 1.2em;
+}
+
+.header-logout-button{
+    background-color: rgb(130, 115, 225);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-left: 15px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.header-logout-button:hover{
+    background-color: rgb(190, 182, 241);
+}

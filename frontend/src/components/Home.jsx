@@ -18,7 +18,7 @@ function Home() {
       setLoggedInuser(user);
     }
   }, []); // Empty dependency array, as there are no dependencies
-  const handleLogout = (e) =>{
+  const handleLogout = () =>{
     localStorage.removeItem('jwtToken');
     localStorage.removeItem('loggedInUser');
     handleSuccess ('Logged out!');

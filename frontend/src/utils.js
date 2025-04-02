@@ -13,3 +13,9 @@ export const handleError = (message) =>{
        
     })
 }
+
+export const handleLogout = (message) =>{
+    toast.error(message,{
+        position: 'top-right'
+    })
+}
