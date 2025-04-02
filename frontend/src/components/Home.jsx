@@ -5,7 +5,10 @@ import { Slate, Editable, withReact } from 'slate-react';
 import { handleSuccess } from '../utils';
 import { ToastContainer } from 'react-toastify';
 
+
+
 function Home() {
+  
   const [loggedInUser, setLoggedInuser] = useState('');
   const navigate = useNavigate();
   useEffect(() => {
@@ -16,7 +19,7 @@ function Home() {
     }
   }, []); // Empty dependency array, as there are no dependencies
   const handleLogout = (e) =>{
-    localStorage.removeItem('token');
+    localStorage.removeItem('jwtToken');
     localStorage.removeItem('loggedInUser');
     handleSuccess ('Logged out!');
     setTimeout(()=>{
@@ -53,6 +56,7 @@ function Home() {
       </Slate>
     </div>
             <ToastContainer />
+    
     </div>
   );
 }

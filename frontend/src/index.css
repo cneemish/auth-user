@@ -30,36 +30,38 @@ body{
   align-items: center;     /* Center horizontally */
 
 }
-.home-container{
-  height: 100vh;
-  width: 100%;
+.home-container {
   display: flex;
   flex-direction: column;
   min-height: 100vh; /* Ensure full viewport height */
 }
 .home-header {
+  width: 100%; /* Header covers the full width */
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
   background-color: #f0f0f0;
 }
+
 .home-header nav {
   display: flex;
-  gap: 15px; /* Spacing between links/buttons */
+  gap: 15px;
 }
 
 .editor-container{
-  background-color:rgb(208, 195, 238);
+  
+  background-color: rgb(208, 195, 238);
   padding: 32px 48px;
   border-radius: 10px;
   width: 100%;
   max-width: 400px;
   box-shadow: 10px 10px 10px 0px rgba(80, 28, 28, 0.1);
-  display: flex;           /* Enable flexbox layout */
-  flex-direction: column;  /* Stack children vertically (h1 above form) */
-  justify-content: center; /* Center vertically */
-  align-items: center;     /* Center horizontally */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto; /* Add this line to center the container horizontally */
 }
 
 .editor-container .slate-editor {
