@@ -30,7 +30,45 @@ body{
   align-items: center;     /* Center horizontally */
 
 }
+.home-container{
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensure full viewport height */
+}
+.home-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #f0f0f0;
+}
+.home-header nav {
+  display: flex;
+  gap: 15px; /* Spacing between links/buttons */
+}
 
+.editor-container{
+  background-color:rgb(208, 195, 238);
+  padding: 32px 48px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 10px 10px 10px 0px rgba(80, 28, 28, 0.1);
+  display: flex;           /* Enable flexbox layout */
+  flex-direction: column;  /* Stack children vertically (h1 above form) */
+  justify-content: center; /* Center vertically */
+  align-items: center;     /* Center horizontally */
+}
+
+.editor-container .slate-editor {
+  width: 80%; /* Adjust width as needed */
+  max-width: 600px;
+  border: 1px solid #ddd;
+  padding: 10px;
+  min-height: 200px;
+}
 .container > h1{
   margin-bottom:  20px;
 }
@@ -82,3 +120,21 @@ body{
  .container button:hover {
      background-color: #e0ffff; /* Lighter cyan/azure */
  }
+
+ .home-header button {
+  padding: 8px 15px;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.home-header button:hover {
+  background-color: #c0392b;
+}
+
+.home-header a{
+  text-decoration: none;
+  color: black;
+}
